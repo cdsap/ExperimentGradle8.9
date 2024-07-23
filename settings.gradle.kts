@@ -45,7 +45,7 @@ rootProject.name = "nowinandroid"
 
 buildCache {
     remote<HttpBuildCache> {
-        url = uri(System.getenv("CI_URL_CACHE_NODE"))
+        url = uri(System.getenv("CACHE_URL_NODE_FAR"))
         isPush = System.getenv("CI").toBoolean()
         isAllowInsecureProtocol = true
     }
