@@ -43,6 +43,14 @@ dependencyResolutionManagement {
 }
 rootProject.name = "nowinandroid"
 
+buildCache {
+    remote<HttpBuildCache> {
+        url = uri(System.getenv("CI_URL_CACHE_NODE"))
+        isPush = System.getenv("CI").toBoolean()
+        isAllowInsecureProtocol = true
+    }
+}
+
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 include(":app-nia-catalog")
